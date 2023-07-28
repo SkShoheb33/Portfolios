@@ -1,0 +1,25 @@
+.card{
+    width: 300px;
+    height: 200px;
+    margin: 20px;
+    position: relative;
+    border-radius: 10px;
+    box-shadow: 12px 12px 2px rgba(0, 0, 0, 0.5);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url('https://images.unsplash.com/photo-1572177812156-58036aae439c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NXx8cHJvamVjdHxlbnwwfHwwfHx8MA%3D%3D&w=1000&q=80');
+}
+.bottom-desc{
+    position: absolute;
+    bottom: 0;
+    background: #F96E6F;
+    color: white;
+    border-radius: 0px 0px 10px 10px ;
+    padding: 5px;
+    width: 100%;
+}
+.card:hover{
+    transform: scale(1.04);
+    cursor: pointer;
+}

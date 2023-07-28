@@ -1,0 +1,44 @@
+<div class="body">
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <!-- Logo -->
+        <a class="navbar-brand" href="#">
+          <img src="../../../assets/logo.svg" style="transform: scale(2.3);" alt="Logo" height="30">
+        </a>
+  
+        <!-- Navbar Toggler (Hamburger) -->
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+  
+        <!-- Navbar Links -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <!-- Home -->
+            <li class="nav-item">
+              <a class="nav-link" href="#home">Home</a>
+            </li>
+            <!-- About -->
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <!-- Skills -->
+            <li class="nav-item">
+              <a class="nav-link" href="#skills">Skills</a>
+            </li>
+            <!-- Projects -->
+            <li class="nav-item">
+              <a class="nav-link" href="#projects">Projects</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <app-home id="home"></app-home>
+    <app-about   id="about"></app-about>
+    <app-skills  id="skills"></app-skills>
+    <app-projects id="projects" (projectEvent)="recived($event)"></app-projects>
+    <app-project-popup [projectdata]="data" (closedpopupEvent)="change($event)"  [popup]="openpopup"></app-project-popup>
+    <app-footer></app-footer>
+</div>
+  

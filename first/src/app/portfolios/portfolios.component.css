@@ -1,0 +1,33 @@
+nav{
+    position: sticky;
+    top:0;
+    left: 0;
+    z-index: 100;
+}
+.body{
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(#CA15A0,#130E48) ;
+    color: white;
+    overflow-y: scroll;
+}
+.body::-webkit-scrollbar{
+    display: none;
+}
+nav{
+    background: rgba(0, 0, 0,0.5);
+}
+.nav-link{
+    color: white;
+}
+.nav-link:hover{
+    transform: scale(1.1);
+}
+.navbar-nav{
+    display: flex;
+    position: absolute;
+    right: 0;
+}
+#navbarNav{
+    position: relative;
+}

@@ -1,0 +1,38 @@
+<div class="b" [ngClass]="{'d-none':!popup}">
+    <div class="popup container row">
+        <i class="fa-solid fa-rectangle-xmark close-btn" (click)="togglepopup()" ></i>
+        <div class="container col-9">
+            <div class="row" >
+            </div>
+            <div class="row my-2 container">
+                <div class="header row">
+                    <div class="image col-2">
+                    </div>
+                    <div class="mx-2 col-3">
+                        <p>Title : {{projectdata.title||'title'}}</p>
+                        <p>Created In: {{projectdata.date}}</p>
+                        <p>Theme : {{projectdata.theme}}</p>
+                        <a [href]="projectdata.source"><button>Get Source Code </button></a>
+                    </div>
+                </div>
+                <div class="desc">
+                    {{projectdata.desc}}
+                </div>
+            </div>
+        </div>
+        <div class="container col-3">
+             <canvas
+            baseChart
+            class="chart"
+            [data]="doughnutChartData"
+            [type]="doughnutChartType"
+            >
+            </canvas>
+        </div>
+        <div class="row details">
+            <div class="screenshots col mx-2" *ngFor="let ss of projectdata.links">
+                <img [src]="ss" alt="" srcset="">
+            </div>
+        </div>
+    </div>
+</div>

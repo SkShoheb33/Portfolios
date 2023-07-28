@@ -1,0 +1,29 @@
+.home-content{
+    display: flex;
+    justify-content: space-around;
+    height: 100vh;
+    align-items: center;
+    width: 100%;
+}
+.background-pic{
+    background-image: url('../../../assets//picbg.svg');
+    width:40%;
+    height: 75%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+ul{
+    width: 60%;
+    display: flex;
+    justify-content: space-around;
+}
+li{
+    list-style: none;
+    font-size: 25px;
+    color: #F96E6F;
+
+}
+li:hover{
+    transform: scale(1.2);
+}

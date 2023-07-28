@@ -1,0 +1,30 @@
+<div class="container">
+    <h1>Projects</h1>
+    <div class="row" *ngIf="!showmore">
+        <div class="col-4" *ngFor="let project of projects">
+            <app-project-card [project]="project" (click)="openpopup(project)"></app-project-card>
+        </div>
+        <div class="col-4" *ngFor="let project of extra">
+            <app-project-card [project]="project" (click)="openpopup(project)"></app-project-card>
+        </div>        
+        <div class="card" *ngIf="ismore" (click)="toggleprojects()">
+            <div class="">
+                <p>
+                    Load <span *ngIf="showmore"> more </span><span *ngIf="!showmore"> less </span> projects
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="row" *ngIf="showmore">
+        <div class="col-4" *ngFor="let project of projects">
+            <app-project-card [project]="project" (click)="openpopup(project)"></app-project-card>
+        </div>
+        <div class="card" *ngIf="ismore" (click)="toggleprojects()">
+            <div class="">
+                <p>
+                    Load <span *ngIf="showmore"> more </span><span *ngIf="!showmore"> less </span> projects
+                </p>
+            </div>
+        </div>
+    </div>
+</div>

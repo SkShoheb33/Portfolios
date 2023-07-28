@@ -1,0 +1,34 @@
+<div class="container mt-5">
+    <!-- {{Skills}} -->
+    <h1>Skills</h1>
+    <div class="progress-section">
+        <div *ngFor="let skill of skills;let index = index">
+            <div class="h6">{{skill[0]}}</div>
+            <div class="progress-bar">
+                <div class="progress-length" [ngStyle]="{'width':skill[1]+'%'}">
+                </div>
+                <div class="progress-pointer">
+                    {{skill[1]}}%
+                </div>
+            </div>
+        </div>
+        <div *ngIf="!showmore">
+        <div  *ngFor="let skill of extras;let index = index">
+            <div class="h6">{{skill[0]}}</div>
+            <div class="progress-bar">
+                <div class="progress-length" [ngStyle]="{'width':skill[1]+'%'}">
+                </div>
+                <div class="progress-pointer">
+                    {{skill[1]}}%
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    <div *ngIf="showmore" class="showmore" (click)="toggleshow()">
+        show more...
+    </div>
+    <div *ngIf="!showmore" class="showmore" (click)="toggleshow()">
+        show less...
+    </div>
+</div>

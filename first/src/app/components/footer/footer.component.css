@@ -1,0 +1,9 @@
+.content{
+    margin-top: 10px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #F96E6F;
+
+}

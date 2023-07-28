@@ -1,0 +1,196 @@
+<div class="body">
+    <form [formGroup]="firstForm" (ngSubmit)="submit1()" class="signup container personal" *ngIf="sections[0]">
+        <h3 class="text-center">Personal Details</h3>
+        <div class="row">
+            <div class="col-4 input1">
+                <label for="input" class="text">First name:</label>
+                <input type="text" placeholder="" name="input" class="input" formControlName="fname"/>
+            </div>
+            <div class="col-4 input1">
+                <label for="input" class="text">Middle name:</label>
+                <input type="text" placeholder="" name="input" class="input" formControlName="mname" />
+            </div>
+            <div class="col-4 input1">
+                <label for="input" class="text">Last name:</label>
+                <input type="text" placeholder="" name="input" class="input" formControlName="lname"/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col input1">
+                <label for="input" class="text">User name:</label>
+                <input type="text" placeholder="" name="input" class="input" formControlName="username" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-2">
+                <label for="country" class="text">Code:</label>
+                <select name="country" id="">
+                    <option value="india">+91</option>
+                </select>
+            </div>
+            <div class="col-10 input1">
+                <label for="input" class="text">Phone Number:</label>
+                <input type="text" placeholder="" name="input" class="input" formControlName="number"/>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col input1">
+                <label for="input" class="text">Email:</label>
+                <input type="text" placeholder="" name="input" class="input" formControlName="email" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col input1">
+                <label for="input" class="text">Github:</label>
+                <input type="text" placeholder="" name="input" class="input" formControlName="github" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col input1">
+                <label for="input" class="text">Password:</label>
+                <input type="password" placeholder="" name="input" class="input" formControlName="password" />
+            </div>
+        </div>
+        <div class="row btn h3 d-flex justify-content-between row">
+            <button class="col " (click)="prev()">
+                <i class="fa-solid fa-arrow-left " ></i>
+            </button>
+            <button class="col" type="submit">
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+        </div>
+    </form>
+    <form [formGroup]="secondForm" (ngSubmit)="submit2()" class="signup container about" *ngIf="sections[1]">
+        <h3 class="text-center">Tell me about your self</h3>
+        <textarea name="desc" id="desc" cols="70" placeholder="Write here" rows="10" formControlName="desc"></textarea>
+        <div class="row btn h3 d-flex justify-content-between row">
+            <button class="col " (click)="prev()">
+                <i class="fa-solid fa-arrow-left " ></i>
+            </button>
+            <button class="col" type="submit">
+                <i class="fa-solid fa-arrow-right"  ></i>
+            </button>
+        </div>
+    </form>
+    <div class="signup container skills" *ngIf="sections[2]">
+        <h3>Skills</h3>
+        <div class="row">
+            <div class="col-8 input1">
+                <label for="input" class="text" >Skill :</label>
+                <input type="text" placeholder="" #skill value="" name="input" class="input" />
+            </div>
+            <div class="col-4 input1">
+                <label for="input" class="text">Accuracy :</label>
+                <input type="range" id="vol" #value value="" name="vol" min="0" max="100" >
+            </div>
+        </div>
+        <div class="row">
+            <button (click)="addSkill(skill,value)">
+                Add
+            </button>
+        </div>
+        <p>Skill have</p>
+        <div class="container">
+            <div class="skills row">
+              <div class="skill d-flex mx-1" *ngFor="let skill of skills">
+                <div class="">{{skill[0]}} <span>{{skill[1]}}%</span></div> &nbsp;
+                <i class="fa-regular fa-circle-xmark" (click)="removeSkill(skill)"></i>
+              </div>
+              
+            </div>
+        </div>
+        <div class="row btn h3 d-flex justify-content-between row">
+            <button class="col " (click)="prev()">
+                <i class="fa-solid fa-arrow-left " ></i>
+            </button>
+            <button class="col" (click)="next()">
+                <i class="fa-solid fa-arrow-right"  ></i>
+            </button>
+        </div>
+    </div>
+    <div class="signup container projects" *ngIf="sections[3]">
+        <h3>Projects</h3>
+        <div class="row">
+            <div class="col-8 input1">
+                <label for="input" class="text">Project title</label>
+                <input type="text" #title placeholder="" name="input" class="input" />
+            </div>
+            <div class="col-4 input1">
+                <label for="input" class="text">Created In</label>
+                <input type="date" #date placeholder="" name="input" class="input" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col input1">
+                <label for="input" class="text">Theme</label>
+                <input type="text" #theme placeholder="" name="input" class="input" />
+            </div>
+        </div>
+        <div class="row">
+            <div class="col input1">
+                <label for="input" class="text">Source link</label>
+                <input type="text" #link placeholder="" name="input" class="input" />
+            </div>
+        </div>
+        
+        <!-- <div class="row">
+            <div class="col-4 input1">
+                <label for="input" class="text">1<sup>st</sup> technology used</label>
+                <input type="text" #tech1 placeholder="" name="input" class="input" />
+                <input type="range" #tech1score name=""  id="">
+            </div>
+            <div class="col-4 input1">
+                <label for="input" class="text">2<sup>nd</sup> technology used</label>
+                <input type="text" #tech2 placeholder="" name="input" class="input" />
+                <input type="range" #tech2score name=""  id="">
+            </div>
+            <div class="col-4 input1">
+                <label for="input" class="text">3<sup>rd</sup> technology used</label>
+                <input type="text" #tech3 placeholder="" name="input" class="input" />
+                <input type="range" #tech3score name=""  id="">
+            </div>
+        </div> -->
+        <div class="row">
+            <label for="input" class="text">Descrition</label>
+            <textarea #desc placeholder="Write your Descrition" name="input" class="input col-3" ></textarea>
+
+        </div>
+        <!-- <div class="row">
+            <label for="input" class="text">Project Screen shots(Links)</label>
+            <div class="col row  d-flex justify-content-between">
+                <input type="text" #link1 placeholder="paste your link1" name="input" class="input col-3" />
+                <input type="text" #link2 placeholder="paste your link2" name="input" class="input col-3" />
+                <input type="text" #link3 placeholder="paste your link3" name="input" class="input col-3" />
+            </div>
+        </div> -->
+        <div class="row">
+            <button (click)="addProject(title,theme,date,link,desc)">
+                Add
+            </button>
+        </div>
+        <p>Projects done</p>
+        <div class="container">
+            <div class="skills row">
+              <div class="skill d-flex mx-1" *ngFor="let project of projects">
+                <div class="">{{project.title}}</div> &nbsp;
+                <i class="fa-regular fa-circle-xmark " (click)="removeProject(project)"></i>
+              </div>
+              
+            </div>
+        </div>
+        <div class="row">
+            <button (click)="create()">
+                Create
+            </button>
+        </div>
+    </div>
+    <div class="container signup" *ngIf="iscreated">
+        <h1 class="text-center text-success display-1">Successfully Created</h1>
+        <h1 class="text-center text-primary ">Get your portfolio link</h1>
+        <a [href]="link" target="_blank">
+            <button>
+                Click me
+            </button>
+        </a>
+    </div>
+</div>
